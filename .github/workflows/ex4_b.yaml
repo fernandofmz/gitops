@@ -7,7 +7,6 @@ jobs:
     
       uses: ./.github/workflows/ex4.yaml
       with: 
-        config-path: .github/workflows/ex4-c.yaml 
         nodeversion: 18
 
   
