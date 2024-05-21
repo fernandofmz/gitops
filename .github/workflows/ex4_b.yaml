@@ -4,5 +4,5 @@ on:
 
 jobs:
   call-workflow-1-in-local-repo:
-    uses: github.com/fernandofmz/gitops/.github/workflows/ex4.yaml@main
+    uses: ./.github/workflows/ex4.yaml
   
