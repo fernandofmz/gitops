@@ -12,13 +12,13 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 'lts/*'
-        - name: switch node version
+        - name: Set value
           run: |
             echo "NODE_VERSION=14" >> $GITHUB_ENV
-        - name: switch nove version  
+        - name: switch node version  
           uses: actions/setup-node@v3
           with:
-            node-version: "${{env.node_version}}"
+            node-version: "${{env.NODE_VERSION}}"
         - name: run test
           shell: bash
           run: |
