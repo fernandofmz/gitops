@@ -1,7 +1,11 @@
 name: reusable workflow
 on: 
+  workflow_dispatch:
   workflow_call:
     inputs:
+      nodeversion:
+        required: true
+        type: string
       config-path:
         required: true
         type: string
@@ -18,7 +22,7 @@ jobs:
         - name : setup node
           uses: actions/setup-node@v3
           with:
-            node-version: 'lts/*'
+            node-version: ${{ inputs.nodeversion}}
         - name: run test
           shell: bash
           run: |
