@@ -6,9 +6,7 @@ on:
       nodeversion:
         required: true
         type: string
-      config-path:
-        required: true
-        type: string
+      
    
         
 jobs:
