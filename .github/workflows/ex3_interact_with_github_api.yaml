@@ -12,8 +12,10 @@ jobs:
     steps:
       - name: short sha
         id: short_sha
-        run: echo 'sha_short=${GITHUB_SHA::7}' >> $GITHUB_OUTPUT
-                  
+        env:
+          SHA: ${{ github.sha}}
+        run: echo 'sha_short=${SHA::7}' >> $GITHUB_ENV
+          # run: echo 'sha_short=${GITHUB_SHA::7}' >> $GITHUB_OUTPUT
       - name: create issue
         run: |
           curl --request POST \
@@ -21,7 +23,8 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           --data '{
-          "title": "Automated issue for commit: ${{ steps.short_sha.outputs.sha_short }}",
+          "title": "Automated issue for commit: ${{ env.sha_short }}",
+            # "title": "Automated issue for commit: ${{ steps.short_sha.outputs.sha_short }}",
           "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ steps.short_sha.outputs.sha_short }}_."
           }' \
           --fail
