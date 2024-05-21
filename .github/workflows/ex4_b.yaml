@@ -8,7 +8,7 @@ jobs:
       uses: fernandofmz/gitops/.github/workflows/ex4.yaml@main
       with: 
         config-path: .github/workflows/ex4-c.yaml 
-      nodeversion: 18
+        nodeversion: 18
       secrets: ${{ secrets.GITHUB_TOKEN }}
   
     
