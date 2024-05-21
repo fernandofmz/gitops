@@ -5,7 +5,7 @@ on:
 jobs:
     call-workflow-in-local-repo:
     
-      uses: fernandofmz/gitops/.github/workflows/ex4.yaml@main
+      uses: ./.github/workflows/ex4.yaml
       with: 
         config-path: .github/workflows/ex4-c.yaml 
         nodeversion: 18
