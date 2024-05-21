@@ -9,9 +9,7 @@ on:
       config-path:
         required: true
         type: string
-    secrets:
-      token:
-        required: true
+   
         
 jobs:
   run-npm-test:
