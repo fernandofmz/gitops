@@ -4,7 +4,7 @@ on:
 
 jobs:
   call-workflow-1-in-local-repo:
-    uses: ${{ github.repository }}/.github/workflows/ex4.yaml@main
+    uses: fernandofmz/gitops/.github/workflows/ex4.yaml@main
     with: 
       config-path: .github/workflows/ex4-c.yaml 
     secrets: ${{ secrets.GITHUB_TOKEN }}
