@@ -5,7 +5,7 @@ on:
 jobs:   
   create-issue:
     permissions: 
-      issues: read| write|none
+      issues: write
       
     runs-on: ubuntu-latest
     
